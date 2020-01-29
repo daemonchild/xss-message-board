@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/css.css">
+    <title>Message Board</title>
+
+</head>
+<body>
+
+    <h1>Message Board</h1>
+
+            <div class="rTable">
+                <div class="rTableHeading">
+        	        <div class="rTableHead">
+			            Name
+			        </div>
+			        <div class="rTableHead">
+			            Message
+			        </div>
+                    <div class="rTableHead">
+			            Time
+			        </div>
+    	        </div>
+
+                {% for message in messages %}
+
+                <div class="rTableRow" border-radius='15px 15px'>
+
+                    <div class="rTableCell">
+
+                            {{ message.name }}
+
+                    </div>
+
+                    <div class="rTableCell">
+
+                            {{ message.message }}
+
+                    </div>
+
+                    <div class="rTableCell">
+
+                            {{ message.timestamp }}
+
+                    </div>
+
+                </div>
+
+                {% endfor %}
+
+            </div>
+
+<div>
+
+    <form action=''{{ posturl }}' method="POST">
+
+        <p>Name <input type = "text" name = "name" /></p>
+        <p>Your Message<input type = "text" name = "message" /></p>
+        <div class="button" align="center"><button type='submit' value='submit'>Add Message</button></div>
+        <p>
+    </form>
+
+
+
+</div>
+
+
+</body>
+</html>
